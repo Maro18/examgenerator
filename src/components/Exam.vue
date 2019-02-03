@@ -1,12 +1,13 @@
 <template>
-    <div class="exams container center-align">
-        <div v-for="exam in exams" :key="exam.id">{{exam.name}} {{exam.max_score}}</div>
+    <div class="exam container center-align">
+        <h1>{{ name }}</h1>
+        <div>{{ $route.params.id }}</div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Exam1',
+        name: 'Exam',
         data() {
             return {}
         }
