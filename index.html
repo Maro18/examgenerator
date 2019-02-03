@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="application-name" content="Exam Generator">
+        <meta name="theme-color" content="#2c3e50">
+        <title>Exam Generator</title>
+        <meta name="title" content="Exam Generator">
+        <meta name="description" content="Project for generating exams with a set of questions.">
+        <meta name="keywords" content="professor, teacher, help, easy, exam, generate, university, school">
+        <link rel="canonical" href="<%= htmlWebpackPlugin.files.publicPath %>">
+        <link rel="icon" type="image/png" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icon-192x192.png">
+        <!--[if IE]><link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icon-192x192.png"><![endif]-->
+
+        <!-- Icon pack -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+              integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+              crossorigin="anonymous">
+
+        <!-- Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- Add to home screen for Android and modern mobile browsers -->
+        <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
+
+        <!-- iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#2c3e50">
+        <meta name="apple-mobile-web-app-title" content="Exam Generator">
+        <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.files.publicPath %>src/assets/images/icon-192x192.png">
+        <link rel="mask-icon" href="<%= htmlWebpackPlugin.files.publicPath %>src/assets/images/logo.png" color="#2c3e50">
+
+        <!-- Win8 -->
+        <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>assets/images/logo.png">
+        <meta name="msapplication-TileColor" content="#2c3e50">
+
+        <!-- Facebook -->
+        <meta property="fb:app_id" content="123456789">
+        <meta property="og:url" content="http://example.com/page.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Exam Generator">
+        <meta property="og:image" content="http://example.com/image.jpg">
+        <meta property="og:description" content="Generate your exams.">
+        <meta property="og:site_name" content="Exam Generator">
+        <meta property="og:locale" content="en_US">
+        <meta property="article:author" content="Maro">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@site_account">
+        <meta name="twitter:creator" content="@individual_account">
+        <meta name="twitter:url" content="http://example.com/page.html">
+        <meta name="twitter:title" content="Content Title">
+        <meta name="twitter:description" content="Content description less than 200 characters">
+        <meta name="twitter:image" content="http://example.com/image.jpg">
+
+        <% for (var chunk of webpack.chunks) {
+            for (var file of chunk.files) {
+              if (file.match(/\.(js|css)$/)) { %>
+        <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+    </head>
+    <body>
+        <noscript>Sorry, JavaScript failed to load.</noscript>
+        <div id="app"></div>
+        <!-- Todo: only include in production -->
+        <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+        <!-- built files will be auto injected -->
+    </body>
+</html>
