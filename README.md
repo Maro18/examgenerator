@@ -1,6 +1,6 @@
 # exam-generator
 
-> Project for generating exams with random set of questions.
+> Vue.js project for generating exams with random set of questions.
 
 ## Build Setup
 
