@@ -37,7 +37,6 @@
                                 id: 1,
                                 name: 'Easy'
                             },
-                            points: 2,
                             answers: [
                             {
                                 id: 1,
@@ -47,6 +46,31 @@
                             {
                                 id: 2,
                                 text: 'Wtf',
+                                correct: true
+                            }
+                        ]
+                       },
+                       {
+                            id: 2,
+                            text: "Drugo pitanje",
+                            score: 20,
+                            subject: {
+                                id: 2,
+                                name: 'Math'
+                            },
+                            level: {
+                                id: 1,
+                                name: 'Easy'
+                            },
+                            answers: [
+                            {
+                                id: 1,
+                                text: 'answer',
+                                correct: false
+                            },
+                            {
+                                id: 2,
+                                text: 'Correct answer',
                                 correct: true
                             }
                         ]
