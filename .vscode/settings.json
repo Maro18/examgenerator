@@ -1,0 +1,37 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "connectionTimeout": 15,
+            "database": "rinamase_exam_generator",
+            "dialect": "MySQL",
+            "name": "ExamGen",
+            "password": "dubrovnik1",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": " rinamase_user"
+        },
+        {
+            "askForPassword": false,
+            "connectionTimeout": 15,
+            "database": "rinamase_exam_generator",
+            "dialect": "MySQL",
+            "name": "examGen",
+            "password": "dubrovnik1",
+            "port": 3306,
+            "server": "https://rinamasera.hr",
+            "username": "rinamase_user"
+        },
+        {
+            "askForPassword": false,
+            "connectionTimeout": 15,
+            "database": "rinamase_exam_generator",
+            "dialect": "MySQL",
+            "name": "EG",
+            "password": "dubrovnik1",
+            "port": 3306,
+            "server": "localhost",
+            "username": "rinamase_user"
+        }
+    ]
+}
