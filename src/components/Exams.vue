@@ -11,20 +11,21 @@
             </b-jumbotron>
 
                 <b-card-group deck>
-                    <b-card :title="exam.name" class="exam" v-for="exam in exams" :key="exam.id">
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a
-                            natural lead-in to additional content. This content
-                            is a little bit longer.
-                        </p>
-                        <b-list-group flush>
-                            <b-list-group-item>{{exam.id_subject}}</b-list-group-item>
-                            <b-list-group-item>{{exam.id_level}}</b-list-group-item>
-                        </b-list-group>
-                        <div slot="footer">
-                            <small class="text-muted">Made on 23.09.2018.</small>
-                        </div>
-                    </b-card>
+                            <router-link :to="{name: 'Exam', params: { id: exam.id }}" tag="b-card" :title="exam.name" class="exam" v-for="exam in exams" :key="exam.id">
+                            <p class="card-text">
+                                This is a wider card with supporting text below as a
+                                natural lead-in to additional content. This content
+                                is a little bit longer.
+                            </p>
+                            <b-list-group flush>
+                                <b-list-group-item>{{exam.subject.name}}</b-list-group-item>
+                                <b-list-group-item>{{exam.level.name}}</b-list-group-item>
+                            </b-list-group>
+                            <div slot="footer">
+                                <small class="text-muted">Made on 23.09.2018.</small>
+                            </div>
+                            </router-link>
+                       
                 </b-card-group>
         </b-container>
     </div>
@@ -40,8 +41,8 @@
                     {
                         id: 1,
                         id_user: 1,
-                        id_subject: 1,
-                        id_level: 1,
+                        subject: {id: 1, name: 'Subject name'},
+                        level: {id: 1, name: 'Level name'},
                         name: 'Exam1',
                         question_number: 3,
                         max_score: 20,
@@ -50,8 +51,8 @@
                     {
                         id: 2,
                         id_user: 1,
-                        id_subject: 1,
-                        id_level: 1,
+                        subject: {id: 1, name: 'Subject name'},
+                        level: {id: 1, name: 'Level name'},
                         name: 'Exam2',
                         question_number: 3,
                         max_score: 200,
@@ -60,8 +61,8 @@
                     {
                         id: 3,
                         id_user: 1,
-                        id_subject: 1,
-                        id_level: 1,
+                        subject: {id: 1, name: 'Subject name'},
+                        level: {id: 1, name: 'Level name'},
                         name: 'Exam3',
                         question_number: 3,
                         max_score: 10,
@@ -70,8 +71,8 @@
                     {
                         id: 4,
                         id_user: 1,
-                        id_subject: 1,
-                        id_level: 1,
+                        subject: {id: 1, name: 'Subject name'},
+                        level: {id: 1, name: 'Level name'},
                         name: 'Exam4',
                         question_number: 7,
                         max_score: 48,
@@ -80,8 +81,8 @@
                     {
                         id: 5,
                         id_user: 1,
-                        id_subject: 1,
-                        id_level: 1,
+                        subject: {id: 1, name: 'Subject name'},
+                        level: {id: 1, name: 'Level name'},
                         name: 'Exam5',
                         question_number: 7,
                         max_score: 48,
